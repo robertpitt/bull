@@ -1,6 +1,6 @@
 {
   "name": "bull",
-  "version": "0.1.5",
+  "version": "0.3.0",
   "description": "Job manager",
   "main": "index.js",
   "repository": {
@@ -17,17 +17,21 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "redis": "~0.8.4",
-    "when": "~2.1.1",
-    "lodash": "~2.2.1",
-    "bluebird": "~1.0.1",
-    "node-uuid": "~1.4.1"
+    "bluebird": "^2.9.27",
+    "lodash": "^3.9.3",
+    "node-uuid": "^1.4.3",
+    "redis": "^0.12.1",
+    "semver": "^4.2.0"
   },
   "devDependencies": {
-    "mocha": "~1.12",
-    "expect.js": "~0.2.0"
+    "expect.js": "^0.3.1",
+    "gulp": "^3.8.11",
+    "gulp-eslint": "^0.13.2",
+    "mocha": "^2.2.5",
+    "sinon": "^1.14.1"
   },
   "scripts": {
-    "test": "mocha test/* --reporter spec"
+    "test": "gulp && mocha test/* --reporter spec",
+    "postpublish": "git push && git push --tags"
   }
 }
